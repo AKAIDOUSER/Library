@@ -1,0 +1,3017 @@
+local uis = game:GetService("UserInputService")
+local runService = game:GetService("RunService")
+
+local Library = {}
+
+function Library:CreateWindow(Options)
+	Options.Title = Options.Title or "Ui Library"
+	Options.Transparency = Options.Transparency or false
+	Options.Acrylic = Options.Acrylic or false
+	Options.CloseAnimation = Options.CloseAnimation or false
+	Options.KeyCode = Options.KeyCode or "K"
+	
+	local MyLibrary = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local DropShadowHolder = Instance.new("Frame")
+	local DropShadow = Instance.new("ImageLabel")
+	local TopBar = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Extencion = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local UIPadding = Instance.new("UIPadding")
+	local ExitBt = Instance.new("ImageLabel")
+	local Line = Instance.new("Frame")
+	local Navegation = Instance.new("Frame")
+	local UICorner_3 = Instance.new("UICorner")
+	local Hide = Instance.new("Frame")
+	local Hide2 = Instance.new("Frame")
+	local ButtonHolder = Instance.new("ScrollingFrame")
+	local UIPadding_2 = Instance.new("UIPadding")
+	local UIListLayout = Instance.new("UIListLayout")
+	local Line_2 = Instance.new("Frame")
+	local ContentContainer = Instance.new("Frame")
+	local UIPadding_6 = Instance.new("UIPadding")
+	local UIListLayout_2 = Instance.new("UIListLayout")
+	local Fade = Instance.new("Frame")
+	local UIGradient_3 = Instance.new("UIGradient")
+	
+	--Properties:
+
+	MyLibrary.Name = "MyLibrary"
+	MyLibrary.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+	Main.Name = "Main"
+	Main.Parent = MyLibrary
+	Main.AnchorPoint = Vector2.new(0.5, 0.5)
+	Main.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+	Main.BackgroundTransparency = Options.Transparency and 0.080 or 0
+	Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Main.BorderSizePixel = 0
+	Main.Active = false
+	Main.Draggable = false
+	Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Main.Size = UDim2.new(0, 400, 0, 300)
+
+	UICorner.Parent = Main
+
+	DropShadowHolder.Name = "DropShadowHolder"
+	DropShadowHolder.Parent = Main
+	DropShadowHolder.BackgroundTransparency = 1.000
+	DropShadowHolder.BorderSizePixel = 0
+	DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
+	DropShadowHolder.ZIndex = 0
+
+	DropShadow.Name = "DropShadow"
+	DropShadow.Parent = DropShadowHolder
+	DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+	DropShadow.BackgroundTransparency = 1.000
+	DropShadow.BorderSizePixel = 0
+	DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+	DropShadow.Size = UDim2.new(1, 47, 1, 47)
+	DropShadow.ZIndex = 0
+	DropShadow.Image = "rbxassetid://6014261993"
+	DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+	DropShadow.ImageTransparency = 0.500
+	DropShadow.ScaleType = Enum.ScaleType.Slice
+	DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
+
+	TopBar.Name = "TopBar"
+	TopBar.Parent = Main
+	TopBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	TopBar.BorderSizePixel = 0
+	TopBar.Size = UDim2.new(1, 0, 0, 30)
+
+	UICorner_2.Parent = TopBar
+
+	Extencion.Name = "Extencion"
+	Extencion.Parent = TopBar
+	Extencion.AnchorPoint = Vector2.new(0, 1)
+	Extencion.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Extencion.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Extencion.BorderSizePixel = 0
+	Extencion.Position = UDim2.new(0, 0, 1, 0)
+	Extencion.Size = UDim2.new(1, 0, 0, 15)
+
+	Title.Name = "Title"
+	Title.Parent = TopBar
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Title.BorderSizePixel = 0
+	Title.Size = UDim2.new(0.5, 0, 1, 0)
+	Title.Font = Enum.Font.Arial
+	Title.Text = Options.Title
+	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Title.TextSize = 14.000
+	Title.TextXAlignment = Enum.TextXAlignment.Left
+
+	UIPadding.Parent = Title
+	UIPadding.PaddingLeft = UDim.new(0, 8)
+	UIPadding.PaddingTop = UDim.new(0, 1)
+
+	ExitBt.Name = "ExitBt"
+	ExitBt.Parent = TopBar
+	ExitBt.AnchorPoint = Vector2.new(1, 0.5)
+	ExitBt.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ExitBt.BackgroundTransparency = 1.000
+	ExitBt.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ExitBt.BorderSizePixel = 0
+	ExitBt.Position = UDim2.new(1, -6, 0.5, 0)
+	ExitBt.Size = UDim2.new(0, 15, 0, 18)
+	ExitBt.Image = "rbxassetid://10747384394"
+
+	Line.Name = "Line"
+	Line.Parent = TopBar
+	Line.AnchorPoint = Vector2.new(0, 1)
+	Line.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+	Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Line.BorderSizePixel = 0
+	Line.Position = UDim2.new(0, 0, 1, 0)
+	Line.Size = UDim2.new(1, 0, 0, 1)
+
+	Navegation.Name = "Navegation"
+	Navegation.Parent = Main
+	Navegation.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Navegation.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Navegation.BorderSizePixel = 0
+	Navegation.Position = UDim2.new(0, 0, 0, 30)
+	Navegation.Size = UDim2.new(0, 120, 1, -30)
+
+	UICorner_3.Parent = Navegation
+
+
+	--[[
+	local SearcthBar = Instance.new("Frame")
+	local Pesquisa = Instance.new("TextBox")
+	local UICorner = Instance.new("UICorner")
+	local icon = Instance.new("ImageLabel")
+	local UIPadding = Instance.new("UIPadding")
+	local UIPadding_2 = Instance.new("UIPadding")
+	local UIListLayout = Instance.new("UIListLayout")
+
+	SearcthBar.Name = "SearcthBar"
+	SearcthBar.Parent = Navegation
+	SearcthBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	SearcthBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	SearcthBar.BorderSizePixel = 0
+	SearcthBar.Size = UDim2.new(1, 0, 0, 30)
+
+	Pesquisa.Name = "Pesquisa"
+	Pesquisa.Parent = SearcthBar
+	Pesquisa.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Pesquisa.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Pesquisa.BorderSizePixel = 0
+	Pesquisa.AnchorPoint = Vector2.new(0, 0.5)
+	Pesquisa.Size = UDim2.new(1, -10, 1, -7)
+	Pesquisa.Position = UDim2.new(0, 5, 0.5, 0)
+	Pesquisa.Font = Enum.Font.Unknown
+	Pesquisa.PlaceholderText = "Search Bar..."
+	Pesquisa.Text = ""
+	Pesquisa.TextColor3 = Color3.fromRGB(178, 178, 178)
+	Pesquisa.TextXAlignment = Enum.TextXAlignment.Left
+	Pesquisa.TextWrapped = true
+	Pesquisa.TextSize = 10.000
+
+	UICorner.CornerRadius = UDim.new(0, 4)
+	UICorner.Parent = Pesquisa
+
+	local s2 = Instance.new("UIStroke")
+	s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	s2.Color = Color3.fromRGB(255, 255, 255)
+	s2.Thickness = 0.8
+	s2.Transparency = 0.3
+	s2.Parent = Pesquisa
+
+	icon.Name = "icon"
+	icon.Parent = SearcthBar
+	icon.AnchorPoint = Vector2.new(0, 0.5)
+	icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	icon.BackgroundTransparency = 1.000
+	icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	icon.BorderSizePixel = 0
+	icon.Position = UDim2.new(0, 8, 0.5, 0)
+	icon.Size = UDim2.new(0, 15, 0, 15)
+	icon.Image = "rbxassetid://7734052925"
+
+	UIPadding.Parent = Pesquisa
+	UIPadding.PaddingLeft = UDim.new(0, 22)
+
+	UIPadding_2.Parent = SearcthBar
+	UIPadding_2.PaddingLeft = UDim.new(0, 2)
+	UIPadding_2.PaddingRight = UDim.new(0, 2)
+	UIPadding_2.PaddingTop = UDim.new(0, 5)
+
+	UIListLayout.Parent = SearcthBar
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	]]
+	
+	Hide2.Name = "Hide2"
+	Hide2.Parent = Navegation
+	Hide2.AnchorPoint = Vector2.new(1, 0)
+	Hide2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+	Hide2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Hide2.BorderSizePixel = 0
+	Hide2.Position = UDim2.new(1, 0, 1, -20)
+	Hide2.Size = UDim2.new(1, -10, 0, 20)
+
+	ButtonHolder.Name = "ButtonHolder"
+	ButtonHolder.Parent = Navegation
+	ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ButtonHolder.BackgroundTransparency = 1.000
+	ButtonHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ButtonHolder.BorderSizePixel = 0
+	ButtonHolder.Selectable = false
+	ButtonHolder.Position = UDim2.new(0, 0, 0, 0)
+	ButtonHolder.Size = UDim2.new(1, 0, 1, 0)
+	ButtonHolder.ScrollBarThickness = 0
+
+	UIPadding_2.Parent = ButtonHolder
+	UIPadding_2.PaddingBottom = UDim.new(0, 8)
+	UIPadding_2.PaddingTop = UDim.new(0, 8)
+
+	UIListLayout.Parent = ButtonHolder
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Padding = UDim.new(0, 5)
+	
+	local function Up()
+		local contentSize = UIListLayout_2.AbsoluteContentSize
+		ButtonHolder.CanvasSize = UDim2.new(0, contentSize.X, 0, contentSize.Y)
+	end
+	
+	Line_2.Name = "Line"
+	Line_2.Parent = Navegation
+	Line_2.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+	Line_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Line_2.BorderSizePixel = 0
+	Line_2.Position = UDim2.new(1, 0, 0, 0)
+	Line_2.Size = UDim2.new(0, 1, 1, 0)
+
+	ContentContainer.Name = "ContentContainer"
+	ContentContainer.Parent = Main
+	ContentContainer.AnchorPoint = Vector2.new(1, 0)
+	ContentContainer.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+	ContentContainer.BackgroundTransparency = 1.000
+	ContentContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ContentContainer.BorderSizePixel = 0
+	ContentContainer.Position = UDim2.new(1, -6, 0, 36)
+	ContentContainer.Size = UDim2.new(1, -132, 1, -42)
+	
+	Fade.Name = "Fade"
+	Fade.Parent = ContentContainer
+	Fade.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Fade.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Fade.BorderSizePixel = 0
+	Fade.Position = UDim2.new(-0.0186567158, 0, -0.0232558139, 0)
+	Fade.Size = UDim2.new(1.04104483, 0, 0, 30)
+	Fade.ZIndex = 10
+
+	UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 40, 40)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 40, 40))}
+	UIGradient_3.Rotation = 90
+	UIGradient_3.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.00), NumberSequenceKeypoint.new(0.43, 0.51), NumberSequenceKeypoint.new(1.00, 0.99), NumberSequenceKeypoint.new(1.00, 1.00)}
+	UIGradient_3.Parent = Fade
+	
+	ExitBt.InputBegan:Connect(function(input, gpe)
+		if gpe then return end
+
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			Main:TweenPosition(UDim2.new(0.5, -999, 0.5, 0), Back, Out, 0.8, true)
+			task.wait(1)
+			MyLibrary:Destroy()
+		end
+	end)
+	
+	if Options.Acrylic then
+		-- Criar uma camada de Acrylic Effect diretamente dentro do Main
+		local AcrylicEffect = Instance.new("Frame")
+		AcrylicEffect.Parent = Main
+		AcrylicEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+		AcrylicEffect.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+		AcrylicEffect.BackgroundTransparency = 0.7 -- Transparência do acrílico
+		AcrylicEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+		AcrylicEffect.Size = UDim2.new(1, 0, 1, 0)
+		AcrylicEffect.ZIndex = 1
+
+		-- Definir um UICorner para bordas arredondadas no AcrylicEffect
+		local UICorner_5 = Instance.new("UICorner")
+		UICorner_5.CornerRadius = UDim.new(0, 8)
+		UICorner_5.Parent = AcrylicEffect
+
+		-- Adicionar um gradiente ao acrílico para suavizar a transição de opacidade
+		local UIGradient_4 = Instance.new("UIGradient")
+		UIGradient_4.Color = ColorSequence.new{
+			ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+			ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+		}
+		UIGradient_4.Transparency = NumberSequence.new{
+			NumberSequenceKeypoint.new(0, 0.4),
+			NumberSequenceKeypoint.new(1, 1)
+		} -- Gradiente de opacidade
+		UIGradient_4.Rotation = 90
+		UIGradient_4.Parent = AcrylicEffect
+
+		-- Criar um efeito de desfoque que afeta apenas o Main
+		local BlurEffect = Instance.new("Frame")
+		BlurEffect.Parent = AcrylicEffect
+		BlurEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+		BlurEffect.BackgroundTransparency = 1
+		BlurEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+		BlurEffect.Size = UDim2.new(1, 0, 1, 0)
+		BlurEffect.ZIndex = 1
+
+		local UICorner_5 = Instance.new("UICorner")
+		UICorner_5.CornerRadius = UDim.new(0, 8)
+		UICorner_5.Parent = BlurEffect
+
+		-- Aplicar o efeito de Blur dentro do Main
+		local UIGradient_5 = Instance.new("UIGradient")
+		UIGradient_5.Color = ColorSequence.new{
+			ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+			ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+		}
+		UIGradient_5.Transparency = NumberSequence.new{
+			NumberSequenceKeypoint.new(0, 0),
+			NumberSequenceKeypoint.new(1, 0.5)
+		}
+		UIGradient_5.Rotation = 90
+		UIGradient_5.Parent = BlurEffect
+
+		-- Opacidade suave do Blur
+		local blurTween = game:GetService("TweenService"):Create(BlurEffect, TweenInfo.new(0.5), {BackgroundTransparency = 0.9})
+		blurTween:Play()
+	end
+	
+	local OpenMain = true
+	
+	local UserInputService = game:GetService("UserInputService")
+	
+	if Options.CloseAnimation == true then
+		UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+			if input.KeyCode == Enum.KeyCode[Options.KeyCode] and not gameProcessedEvent then
+				OpenMain = not OpenMain
+				if OpenMain == true then
+					Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), Back, Out, 0.8, true)
+					task.wait(1)
+				else
+					Main:TweenPosition(UDim2.new(0.5, -999, 0.5, 0), Back, Out, 0.8, true)
+					task.wait(1)
+				end
+			end
+		end)
+	else
+		UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+			if input.KeyCode == Enum.KeyCode[Options.KeyCode] and not gameProcessedEvent then
+				Main.Visible = not Main.Visible
+			end
+		end)
+	end
+	
+	local GUI = {}
+	
+	function GUI:AddTab(Options)
+		Options.Title = Options.Title or "Preview Tab"
+		Options.Icon = Options.Icon or "http://www.roblox.com/asset/?id=72540688355056"
+
+		local Tab = {
+			Hover = false,
+			Active = false
+		}
+
+		local Inactive = Instance.new("TextLabel")
+		local UIPadding_4 = Instance.new("UIPadding")
+		local Icon_2 = Instance.new("ImageLabel")
+		local UICorner_5 = Instance.new("UICorner")
+		local TabHome = Instance.new("ScrollingFrame")
+		local UIPadding_6 = Instance.new("UIPadding")
+		local UIListLayout_2 = Instance.new("UIListLayout")
+		local s = Instance.new("UIStroke")
+
+		-- Configurações do Stroke
+		s.Color = Color3.fromRGB(44, 44, 44)
+		s.Transparency = 0.3
+		s.Thickness = 0.8
+		s.Parent = Inactive
+		s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+		-- Configurações do Inactive
+		Inactive.Name = "Inactive"
+		Inactive.Parent = ButtonHolder
+		Inactive.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+		Inactive.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Inactive.BorderSizePixel = 0
+		Inactive.Size = UDim2.new(1, -10, 0, 24)
+		Inactive.Font = Enum.Font.Ubuntu
+		Inactive.Text = Options.Title
+		Inactive.TextColor3 = Color3.fromRGB(140, 140, 140)
+		Inactive.TextSize = 12.000
+		Inactive.TextXAlignment = Enum.TextXAlignment.Left
+
+		UIPadding_4.Parent = Inactive
+		UIPadding_4.PaddingLeft = UDim.new(0, 28)
+
+		-- Configurações do Icon
+		Icon_2.Name = "Icon"
+		Icon_2.Parent = Inactive
+		Icon_2.AnchorPoint = Vector2.new(0, 0.5)
+		Icon_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Icon_2.BackgroundTransparency = 1.000
+		Icon_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Icon_2.BorderSizePixel = 0
+		Icon_2.Position = UDim2.new(0, -24, 0.5, 0)
+		Icon_2.Size = UDim2.new(0, 20, 0, 20)
+		Icon_2.Image = Options.Icon
+
+		-- Configurações do TabHome
+		TabHome.Name = "TabHome"
+		TabHome.Parent = ContentContainer
+		TabHome.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TabHome.BackgroundTransparency = 1.000
+		TabHome.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabHome.BorderSizePixel = 0
+		TabHome.Visible = false
+		TabHome.Size = UDim2.new(1, 0, 1, 0)
+		TabHome.ScrollBarThickness = 0
+		TabHome.ClipsDescendants = true
+
+		UICorner_5.CornerRadius = UDim.new(0, 4)
+		UICorner_5.Parent = Inactive
+
+		UIPadding_6.Parent = TabHome
+		UIPadding_6.PaddingBottom = UDim.new(0, 2)
+		UIPadding_6.PaddingLeft = UDim.new(0, 2)
+		UIPadding_6.PaddingRight = UDim.new(0, 2)
+		UIPadding_6.PaddingTop = UDim.new(0, 2)
+
+		UIListLayout_2.Parent = TabHome
+		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+		UIListLayout_2.Padding = UDim.new(0, 6)
+		
+		local function UpdateCanvasSize()
+			local contentSize = UIListLayout_2.AbsoluteContentSize
+			TabHome.CanvasSize = UDim2.new(0, contentSize.X, 0, contentSize.Y)
+		end
+		
+		Inactive:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+		Up()
+
+		-- Eventos de hover
+		Inactive.MouseEnter:Connect(function()
+			Tab.Hover = true
+			if not Tab.Active then
+				Inactive.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+				Inactive.TextColor3 = Color3.fromRGB(190, 190, 190)
+				Icon_2.ImageColor3 = Color3.fromRGB(240, 240, 240)
+			end
+		end)
+
+		Inactive.MouseLeave:Connect(function()
+			Tab.Hover = false
+			if not Tab.Active then
+				Inactive.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+				Inactive.TextColor3 = Color3.fromRGB(140, 140, 140)
+				Icon_2.ImageColor3 = Color3.fromRGB(170, 170, 170)
+			end
+		end)
+
+		-- Detectar clique com InputBegan
+		Inactive.InputBegan:Connect(function(input, gpe)
+			if gpe then return end
+
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				if Tab.Hover then
+					Tab:Activate()
+				end
+			end
+		end)
+
+		-- Funções para ativar e desativar abas
+		function Tab:Activate()
+			if not Tab.Active then
+				if GUI.CurrentTab ~= nil then
+					GUI.CurrentTab:Deactivate()
+				end
+				Tab.Active = true
+				Inactive.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+				Inactive.TextColor3 = Color3.fromRGB(190, 190, 190)
+				Icon_2.ImageColor3 = Color3.fromRGB(240, 240, 240)
+				s.Color = Color3.fromRGB(240, 240, 240)
+				TabHome.Visible = true
+				GUI.CurrentTab = Tab
+			end
+		end
+
+		function Tab:Deactivate()
+			if Tab.Active then
+				Tab.Active = false
+				Tab.Hover = false
+				Inactive.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+				Inactive.TextColor3 = Color3.fromRGB(140, 140, 140)
+				Icon_2.ImageColor3 = Color3.fromRGB(170, 170, 170)
+				s.Color = Color3.fromRGB(40, 40, 40)
+				TabHome.Visible = false
+			end
+		end
+
+		-- Ativar a primeira aba ao ser criada
+		if GUI.CurrentTab == nil then
+			GUI.CurrentTab = Tab
+			Tab:Activate()
+		end
+
+
+
+		function Tab:AddToggle(Options)
+			Options.Title = Options.Title or "Preview Toggle"
+			Options.Default = Options.Default or false
+			Options.Callback = Options.Callback or function(Value) end
+
+			local Toggle = {}
+			
+			
+
+			local ActiveToggle = Instance.new("Frame")
+			local UICorner_15 = Instance.new("UICorner")
+			local Title_6 = Instance.new("TextLabel")
+			local UIPadding_10 = Instance.new("UIPadding")
+			local CheckmarHolder = Instance.new("Frame")
+			local s = Instance.new("UIStroke")
+			local s1 = Instance.new("UIStroke")
+			local UICorner_16 = Instance.new("UICorner")
+			local UIGradient = Instance.new("UIGradient")
+			local Checkmar = Instance.new("ImageLabel")
+
+			local on = Options.Default
+			
+			ActiveToggle.Name = "Active Toggle"
+			ActiveToggle.Parent = TabHome
+			ActiveToggle.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			ActiveToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ActiveToggle.BorderSizePixel = 0
+			ActiveToggle.Size = UDim2.new(1, 0, 0, 32)
+
+			UICorner_15.CornerRadius = UDim.new(0, 6)
+			UICorner_15.Parent = ActiveToggle
+			
+			s1.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s1.Color = Color3.fromRGB(255, 255, 255)
+			s1.Thickness = 0.8
+			s1.Transparency = 0.3
+			s1.Parent = ActiveToggle
+
+			Title_6.Name = "Title"
+			Title_6.Parent = ActiveToggle
+			Title_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title_6.BackgroundTransparency = 1.000
+			Title_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title_6.BorderSizePixel = 0
+			Title_6.Size = UDim2.new(1, 0, 1, 0)
+			Title_6.Font = Enum.Font.Ubuntu
+			Title_6.Text = Options.Title
+			Title_6.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title_6.TextSize = 14.000
+			Title_6.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding_10.Parent = ActiveToggle
+			UIPadding_10.PaddingBottom = UDim.new(0, 6)
+			UIPadding_10.PaddingLeft = UDim.new(0, 6)
+			UIPadding_10.PaddingRight = UDim.new(0, 6)
+			UIPadding_10.PaddingTop = UDim.new(0, 6)
+
+			CheckmarHolder.Name = "CheckmarHolder"
+			CheckmarHolder.Parent = ActiveToggle
+			CheckmarHolder.AnchorPoint = Vector2.new(1, 0.5)
+			CheckmarHolder.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+			CheckmarHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			CheckmarHolder.BorderSizePixel = 0
+			CheckmarHolder.Position = UDim2.new(1, 0, 0.5, 0)
+			CheckmarHolder.Size = UDim2.new(0, 20, 0, 20)
+
+			UICorner_16.CornerRadius = UDim.new(0, 4)
+			UICorner_16.Parent = CheckmarHolder
+
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(40, 40, 40)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(40, 40, 40))}
+			UIGradient.Rotation = 90
+			UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.00), NumberSequenceKeypoint.new(0.44, 0.60), NumberSequenceKeypoint.new(1.00, 0.98)}
+			UIGradient.Parent = CheckmarHolder
+
+			s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s.Color = Color3.fromRGB(255, 255, 255)
+			s.Thickness = 0.8
+			s.Transparency = 0.3
+			s.Parent = CheckmarHolder
+
+			Checkmar.Name = "Checkmar"
+			Checkmar.Parent = CheckmarHolder
+			Checkmar.AnchorPoint = Vector2.new(0.5, 0.5)
+			Checkmar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Checkmar.BackgroundTransparency = 1.000
+			Checkmar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Checkmar.BorderSizePixel = 0
+			Checkmar.Position = UDim2.new(0.5, 0, 0.5, 0)
+			Checkmar.Size = UDim2.new(1, -2, 1, -2)
+			Checkmar.Image = Options.Default and "http://www.roblox.com/asset/?id=116207500386434" or ""
+			
+			ActiveToggle:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			Title_6.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then	
+					on = not on
+					if on then
+						Checkmar.Image = "http://www.roblox.com/asset/?id=116207500386434"
+						Options.Callback(on)  -- Chama o callback com o novo estado
+					else
+						Checkmar.Image = ""
+						Options.Callback(on)  -- Chama o callback com o novo estado
+					end
+				end
+			end)
+			return Toggle
+		end
+		
+		-- Definindo a função para adicionar um botão à GUI
+		function Tab:AddButton(Options)
+			-- Valores padrão para o título e callback
+			Options.Title = Options.Title or "Preview Button"
+			Options.Callback = Options.Callback or function() end
+
+			-- Criando o botão e seus componentes
+			local Button = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local TitleLabel = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+			local Stroke = Instance.new("UIStroke")
+			
+			local Buttonn = {}
+
+			-- Configurando a borda do botão
+			Stroke.Color = Color3.fromRGB(255, 255, 255)
+			Stroke.Transparency = 0.3
+			Stroke.Thickness = 0.8
+			Stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			Stroke.Parent = Button
+
+			-- Configuração do Frame (botão)
+			Button.Name = "Button"
+			Button.Parent = TabHome
+			Button.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Button.BorderSizePixel = 0
+			Button.Size = UDim2.new(1, 0, 0, 32)
+
+			-- Arredondando os cantos do botão
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Button
+
+			-- Configuração do título do botão
+			TitleLabel.Name = "Title"
+			TitleLabel.Parent = Button
+			TitleLabel.BackgroundTransparency = 1
+			TitleLabel.Size = UDim2.new(1, -20, 1, 0)
+			TitleLabel.Font = Enum.Font.Ubuntu
+			TitleLabel.Text = Options.Title
+			TitleLabel.TextColor3 = Color3.fromRGB(240, 240, 240)
+			TitleLabel.TextSize = 14
+			TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+			-- Adicionando preenchimento ao botão
+			UIPadding.Parent = Button
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			-- Configuração do ícone (imagem ao lado do título)
+			Icon.Name = "Icon"
+			Icon.Parent = Button
+			Icon.AnchorPoint = Vector2.new(1, 0)
+			Icon.BackgroundTransparency = 1
+			Icon.Position = UDim2.new(1, 0, 0, 0)
+			Icon.Size = UDim2.new(0, 20, 0, 20)
+			Icon.Image = "http://www.roblox.com/asset/?id=118480358154960"
+			
+			Button:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			-- Função de clique do botão
+			TitleLabel.InputBegan:Connect(function(input, gameProcessed)
+				-- Verifica se o jogo processou a entrada (para evitar interferências com outras ações)
+				if gameProcessed then return end
+
+				-- Verifica se o clique foi com o botão esquerdo do mouse
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					-- Chama o callback do botão
+					Options.Callback()
+				end
+			end)
+			return Buttonn
+		end
+		
+		function Tab:AddLabel(Options)
+			-- Definindo valores padrão para Title e Content, caso não sejam passados
+			Options.Title = Options.Title or "Preview Label"
+			Options.Content = Options.Content or "No Content"
+
+			-- Criando a tabela de retorno e a variável 'on' para controlar a animação
+			local Labell = {}
+			local on = false
+
+			-- Criando os componentes da label
+			local Label = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+			local Content = Instance.new("TextLabel")
+			local s = Instance.new("UIStroke")
+
+			-- Configurando a borda (stroke)
+			s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s.Color = Color3.fromRGB(255, 255, 255)
+			s.Thickness = 0.8
+			s.Transparency = 0.3
+			s.Parent = Label
+
+			-- Configurando a label principal
+			Label.Name = "Label"
+			Label.Parent = TabHome
+			Label.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Label.BorderSizePixel = 0
+			Label.Size = UDim2.new(1, 0, 0, 26)
+
+			-- Configurando o cantos arredondados
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Label
+
+			-- Configurando o título
+			Title.Name = "Title"
+			Title.Text = Options.Title
+			Title.Parent = Label
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, 0, 0, 15)
+			Title.Font = Enum.Font.Ubuntu
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			-- Adicionando padding interno
+			UIPadding.Parent = Label
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 26)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			-- Configurando o ícone
+			Icon.Name = "Icon"
+			Icon.Parent = Label
+			Icon.AnchorPoint = Vector2.new(0, 0.5)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(0, -23, 0, 7)
+			Icon.Size = UDim2.new(0, 18, 0, 15)
+			Icon.Image = "http://www.roblox.com/asset/?id=125679475926150"
+
+			-- Configurando o conteúdo
+			Content.Name = "Content"
+			Content.Parent = Label
+			Content.AnchorPoint = Vector2.new(0, 1)
+			Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Content.BackgroundTransparency = 1.000
+			Content.Text = Options.Content
+			Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Content.BorderSizePixel = 0
+			Content.Position = UDim2.new(0, -20, 1, 0)
+			Content.Size = UDim2.new(1, 23, 1, -18)
+			Content.Visible = false
+			Content.TextWrapped = true
+			Content.Font = Enum.Font.Ubuntu
+			Content.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Content.TextSize = 14.000
+			Content.TextXAlignment = Enum.TextXAlignment.Left
+			Content.TextYAlignment = Enum.TextYAlignment.Top
+			
+			Label:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			-- Configurando a animação para expandir ou contrair o conteúdo
+			Title.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+					if on == true then
+						Label:TweenSize(UDim2.new(1, 0, 0, 60), Out, Back, 0.5, true)
+						Content.Visible = not Content.Visible
+					else
+						Label:TweenSize(UDim2.new(1, 0, 0, 26), Out, Back, 0.5, true)
+						task.wait(0.2) 
+						Content.Visible = not Content.Visible
+					end
+				end
+			end)
+			
+			return Labell
+		end
+		
+		function Tab:AddSlide(Options)
+			Options.Title = Options.Title or "Preview Slide"
+			Options.PlaceHolder = Options.PlaceHolder or "Bananas"
+			Options.Min = Options.Min or 0
+			Options.Max = Options.Max or 100
+			Options.Default = Options.Default or 50
+			Options.Callback = Options.Callback or function(Value) end
+
+			local Slide = {}
+
+			-- Gui to Lua
+			-- Version: 3.2
+
+			-- Instances:
+			local Slider = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local UIPadding = Instance.new("UIPadding")
+			local Value = Instance.new("TextLabel")
+			local SliderBack = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local Draggable = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+
+			--Properties:
+			Slider.Name = "Slider"
+			Slider.Parent = TabHome
+			Slider.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Slider.BorderSizePixel = 0
+			Slider.Size = UDim2.new(1, 0, 0, 60)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Slider
+
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = Slider
+
+			UIPadding.Parent = Slider
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Value.Name = "Value"
+			Value.Parent = Slider
+			Value.AnchorPoint = Vector2.new(1, 0)
+			Value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Value.BackgroundTransparency = 1.000
+			Value.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Value.BorderSizePixel = 0
+			Value.Position = UDim2.new(1, 0, 0, 0)
+			Value.Size = UDim2.new(0, 24, 0, 20)
+			Value.Font = Enum.Font.Ubuntu
+			Value.Text = "100"
+			Value.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Value.TextSize = 14.000
+			Value.TextXAlignment = Enum.TextXAlignment.Right
+
+			SliderBack.Name = "SliderBack"
+			SliderBack.Parent = Slider
+			SliderBack.AnchorPoint = Vector2.new(0, 1)
+			SliderBack.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+			SliderBack.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			SliderBack.BorderSizePixel = 0
+			SliderBack.Position = UDim2.new(0, 0, 1, 0)
+			SliderBack.Size = UDim2.new(1, 0, 0, 20)
+
+			UICorner_2.Parent = SliderBack
+			
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(160, 160, 160)
+			s2.Thickness = 0.8
+			s2.Transparency = 0
+			s2.Parent = SliderBack
+
+			Draggable.Name = "Draggable"
+			Draggable.Parent = SliderBack
+			Draggable.BackgroundColor3 = Color3.fromRGB(160, 160, 160)
+			Draggable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Draggable.BorderSizePixel = 0
+			Draggable.Size = UDim2.new(0.5, 0, 1, 0)
+
+			UICorner_3.Parent = Draggable
+
+			Title.Name = "Title"
+			Title.Parent = Slider
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, -20, 0, 20)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			-- Função para atualizar o valor do Slider
+			local function UpdateSliderValue()
+				local sliderValue = math.clamp(Draggable.Size.X.Scale * (Options.Max - Options.Min) + Options.Min, Options.Min, Options.Max)
+				local roundedValue = math.floor(sliderValue)  -- Arredonda o valor
+
+				Value.Text = roundedValue  -- Atualiza o texto com o valor arredondado
+				Options.Callback(roundedValue)  -- Chama o callback com o valor arredondado
+			end
+
+			-- Função para ajustar o tamanho do "Draggable" baseado em um novo tamanho
+			local function SetSliderSize(newSize)
+				local clampedSize = math.clamp(newSize, 0, 1)  -- Limitar o tamanho entre 0 e 1
+				Draggable.Size = UDim2.new(clampedSize, 0, 1, 0)
+				UpdateSliderValue()  -- Atualiza o valor do slider
+			end
+
+			-- Eventos para interatividade do slider
+			local dragging = false
+			local startDragPosition = 0
+
+			SliderBack.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = true
+					startDragPosition = input.Position.X
+				end
+			end)
+
+			-- Atualiza o tamanho do "Draggable" enquanto arrasta
+			game:GetService("UserInputService").InputChanged:Connect(function(input)
+				if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+					local delta = input.Position.X - startDragPosition  -- Distância do movimento
+					local newSize = Draggable.Size.X.Scale + (delta / SliderBack.AbsoluteSize.X)  -- Calcula o novo tamanho
+					SetSliderSize(newSize)  -- Atualiza o tamanho do Draggable
+					startDragPosition = input.Position.X  -- Atualiza a posição inicial para o próximo cálculo
+				end
+			end)
+
+			-- Para de arrastar quando o botão do mouse é liberado
+			game:GetService("UserInputService").InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = false
+				end
+			end)
+
+			-- Configuração inicial do slider
+			local initialSize = (Options.Default - Options.Min) / (Options.Max - Options.Min)
+			SetSliderSize(initialSize)  -- Ajusta o tamanho inicial do "Draggable"
+			UpdateSliderValue()  -- Atualiza o valor inicial
+
+			return Slide
+		end
+
+		
+		function Tab:AddDropdown(Options)
+			Options.Title = Options.Title or "Preview Dropdown"
+			Options.Values = Options.Values or {"Opções 1"}
+			Options.Default = Options.Default or "Opção 1"
+			Options.Callback = Options.Callback or function(Value) end
+
+			local Drop = {}
+			local on = false -- Variável para controlar o estado de aberto/fechado
+
+			local Dropdown = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local s = Instance.new("UIStroke")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+			local OptionsHolder = Instance.new("Frame")
+			local UIListLayout = Instance.new("UIListLayout")
+
+			-- Propriedades do Dropdown
+			Dropdown.Name = "Dropdown"
+			Dropdown.Parent = TabHome
+			Dropdown.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Dropdown.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Dropdown.BorderSizePixel = 0
+			Dropdown.Size = UDim2.new(1, 0, 0, 32)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Dropdown
+
+			s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s.Color = Color3.fromRGB(255, 255, 255)
+			s.Thickness = 0.8
+			s.Transparency = 0.3
+			s.Parent = Dropdown
+
+			Title.Name = "Title"
+			Title.Parent = Dropdown
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, -20, 0, 20)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Dropdown
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Icon.Name = "Icon"
+			Icon.Parent = Dropdown
+			Icon.AnchorPoint = Vector2.new(1, 0)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(1, 0, 0, 0)
+			Icon.Size = UDim2.new(0, 20, 0, 20)
+			Icon.Image = "http://www.roblox.com/asset/?id=86625499622821" -- ícone do dropdown
+
+			OptionsHolder.Name = "OptionsHolder"
+			OptionsHolder.Parent = Dropdown
+			OptionsHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			OptionsHolder.BackgroundTransparency = 1.000
+			OptionsHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			OptionsHolder.BorderSizePixel = 0
+			OptionsHolder.Position = UDim2.new(0, 0, 0, 26)
+			OptionsHolder.Size = UDim2.new(1, 0, 0, 0)  -- Inicialmente, as opções não têm altura
+			OptionsHolder.Visible = false
+
+			UIListLayout.Parent = OptionsHolder
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			UIListLayout.Padding = UDim.new(0, 5)
+			
+			Dropdown:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			-- Adicionar as opções ao dropdown
+			for _, value in ipairs(Options.Values) do
+				local Option = Instance.new("TextLabel")
+				Option.Name = value
+				Option.Parent = OptionsHolder
+				Option.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+				Option.BackgroundTransparency = 0.080
+				Option.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Option.BorderSizePixel = 0
+				Option.Size = UDim2.new(1, -10, 0, 16)
+				Option.Font = Enum.Font.Ubuntu
+				Option.Text = value
+				Option.TextColor3 = Color3.fromRGB(240, 240, 240)
+				Option.TextSize = 12.000
+
+				local UICorner_Option = Instance.new("UICorner")
+				UICorner_Option.CornerRadius = UDim.new(0, 4)
+				UICorner_Option.Parent = Option
+
+				Option.InputBegan:Connect(function(input, gameProcessed)
+					if gameProcessed then return end
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+						-- Ao clicar na opção, chama o callback
+						Options.Callback(value)
+						-- Fecha as opções depois que uma for selecionada
+						on = false
+						Title.Text = Options.Title.. " > ".. value
+						Dropdown:TweenSize(UDim2.new(1, 0, 0, 32), Back, Out, 0.5, true)
+						OptionsHolder.Visible = not OptionsHolder.Visible
+					end
+				end)
+			end
+
+			-- Evento de clique no título para expandir/colapsar o dropdown
+			Title.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+					local newHeight = 36 + (16 * #Options.Values) + (5 * (#Options.Values - 1))  -- Calcula o novo tamanho com base nas opções
+
+					if on then
+						-- Expandir o dropdown, ajustando o tamanho conforme o número de opções
+						Dropdown:TweenSize(UDim2.new(1, 0, 0, newHeight), Back, Out, 0.5, true)
+						OptionsHolder.Visible = true
+					else
+						-- Colapsar o dropdown
+						Dropdown:TweenSize(UDim2.new(1, 0, 0, 32), Back, Out, 0.5, true)
+						task.wait(0.2) -- Espera a animação terminar
+						OptionsHolder.Visible = false
+					end
+				end
+			end)
+
+			return Drop
+		end
+
+		function Tab:AddEditText(Options)
+			Options.Title = Options.Title or "Preview EditText"
+			Options.Placeholder = Options.Placeholder or "PlaceHolder..."
+			Options.Callback = Options.Callback or function(Value) end
+
+			local Edit = {}
+
+			-- Criando os elementos
+			local EditText = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Text = Instance.new("TextBox")
+			local UICorner_2 = Instance.new("UICorner")
+			local s = Instance.new("UIStroke")
+
+			-- Configurando a aparência do EditText
+			EditText.Name = "EditText"
+			EditText.Parent = TabHome -- Adapta ao tab atual
+			EditText.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			EditText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			EditText.BorderSizePixel = 0
+			EditText.Size = UDim2.new(1, 0, 0, 32)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = EditText
+
+			-- Aplicar Stroke ao EditText
+			s.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s.Color = Color3.fromRGB(255, 255, 255)
+			s.Thickness = 0.8
+			s.Transparency = 0.3
+			s.Parent = EditText
+
+			-- Configuração do título
+			Title.Name = "Title"
+			Title.Parent = EditText
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0.5, 30, 1, 0)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			-- Padding para o título
+			UIPadding.Parent = EditText
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			-- Configuração do TextBox
+			Text.Name = "Text"
+			Text.Parent = EditText
+			Text.AnchorPoint = Vector2.new(1, 0)
+			Text.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Text.BackgroundTransparency = 0.080
+			Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Text.BorderSizePixel = 0
+			Text.ClipsDescendants = true
+			Text.Position = UDim2.new(1, 0, 0, 0)
+			Text.Size = UDim2.new(0, 90, 1, 0)
+			Text.Font = Enum.Font.SourceSans
+			Text.PlaceholderText = Options.Placeholder
+			Text.Text = ""
+			Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Text.TextSize = 12.000
+			Text.TextWrapped = true
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = Text
+			
+			EditText:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			-- Conectar o callback ao TextBox para capturar as entradas
+			Text.FocusLost:Connect(function(enterPressed)
+				if enterPressed then
+					Options.Callback(Text.Text) -- Executa o callback ao perder o foco ou ao pressionar Enter
+				end
+			end)
+
+			return Edit
+		end
+		
+		function Tab:AddSection(Options)
+			Options.Title = Options.Title or "Preview Section"
+			
+
+			local Section = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+
+			local Sectionn = {}
+
+			Section.Name = "Section"
+			Section.Parent = TabHome
+			Section.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Section.BackgroundTransparency = 1.000
+			Section.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Section.BorderSizePixel = 0
+			Section.Size = UDim2.new(1, 0, 0, 32)
+
+			Title.Name = "Title"
+			Title.Parent = Section
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, 0, 1, 0)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 15.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Section
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+			
+			Section:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+			
+			return Sectionn
+		end
+		
+		function Tab:AddColorPicker(Options)
+			Options.Title = Options.Title or "Preview ColorPick"
+			Options.ColorPickerType = Options.ColorPickerType or "Rainbow"
+			Options.Default = Options.Default or Color3.fromRGB(255, 0, 0)
+			Options.Callback = Options.Callback or function(Value) end
+
+			local ColorPicker = {}
+			local on = false
+			local selectedColor = Options.Default
+
+			local Colorpicker = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local s2 = Instance.new("UIStroke")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local View = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local Icon = Instance.new("ImageLabel")
+			local UIPadding_2 = Instance.new("UIPadding")
+			local F = Instance.new("Frame")
+			local Colours = Instance.new("Frame")
+			local UIGradient = Instance.new("UIGradient")
+			local UICorner_3 = Instance.new("UICorner")
+			local cor = Instance.new("ImageButton")
+			local UICorner_4 = Instance.new("UICorner")
+			local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+			local UIPadding_3 = Instance.new("UIPadding")
+			local Vertical = Instance.new("Frame")
+			local UICorner_5 = Instance.new("UICorner")
+			local Rainbow = Instance.new("UIGradient")
+			local Slide = Instance.new("TextLabel")
+
+			--Properties:
+
+			Colorpicker.Name = "Colorpicker"
+			Colorpicker.Parent = TabHome
+			Colorpicker.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Colorpicker.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Colorpicker.BorderSizePixel = 0
+			Colorpicker.Position = UDim2.new(0.5, 0, -0.73443985, 0)
+			Colorpicker.Size = UDim2.new(1, 0, 0, 27)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Colorpicker
+			
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = Colorpicker
+
+			Title.Name = "Title"
+			Title.Parent = Colorpicker
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, 0, 0, 15)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Title
+			UIPadding.PaddingLeft = UDim.new(0, 26)
+
+			View.Name = "View"
+			View.Parent = Title
+			View.AnchorPoint = Vector2.new(1, 0)
+			View.BackgroundColor3 = Options.Default
+			View.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			View.BorderSizePixel = 0
+			View.Position = UDim2.new(1, 0, 0, -4)
+			View.Size = UDim2.new(0, 22, 0, 22)
+
+			UICorner_2.Parent = View
+
+			Icon.Name = "Icon"
+			Icon.Parent = Colorpicker
+			Icon.AnchorPoint = Vector2.new(1, 0.5)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(0, 20, 0, 7)
+			Icon.Size = UDim2.new(0, 18, 0, 15)
+			Icon.Image = "rbxassetid://7733770982"
+
+			UIPadding_2.Parent = Colorpicker
+			UIPadding_2.PaddingBottom = UDim.new(0, 6)
+			UIPadding_2.PaddingLeft = UDim.new(0, 6)
+			UIPadding_2.PaddingRight = UDim.new(0, 6)
+			UIPadding_2.PaddingTop = UDim.new(0, 6)
+
+			F.Name = "F"
+			F.Parent = Colorpicker
+			F.AnchorPoint = Vector2.new(0, 1)
+			F.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			F.BackgroundTransparency = 1.000
+			F.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			F.BorderSizePixel = 0
+			F.Position = UDim2.new(0, 0, 1, 0)
+			F.Size = UDim2.new(1, 0, 1, -22)
+			F.Visible = false
+
+			Colours.Name = "Colours"
+			Colours.Parent = F
+			Colours.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Colours.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Colours.BorderSizePixel = 0
+			Colours.Size = UDim2.new(0, 209, 0, 133)
+
+			UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+			UIGradient.Rotation = 90
+			UIGradient.Parent = Colours
+
+			UICorner_3.Parent = Colours
+
+			cor.Name = "cor"
+			cor.Parent = Colours
+			cor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			cor.BackgroundTransparency = 1.000
+			cor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			cor.BorderSizePixel = 0
+			cor.Size = UDim2.new(1, 0, 1, 0)
+			cor.Image = "http://www.roblox.com/asset/?id=1720640939"
+			cor.ImageColor3 = Color3.fromRGB(255, 0, 0)
+			cor.ImageRectOffset = Vector2.new(999, 0)
+			cor.ImageRectSize = Vector2.new(-999, 999)
+
+			UICorner_4.Parent = cor
+			
+			local SliderCor = Instance.new("TextLabel")
+			local UICorner = Instance.new("UICorner")
+
+			--Properties:
+
+			SliderCor.Name = "SliderCor"
+			SliderCor.Parent = cor
+			SliderCor.AnchorPoint = Vector2.new(0.5, 0.5)
+			SliderCor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			SliderCor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			SliderCor.BorderSizePixel = 0
+			SliderCor.Position = UDim2.new(0, 0, 0, 0)
+			SliderCor.Size = UDim2.new(0, 7, 0, 7)
+			SliderCor.Font = Enum.Font.SourceSans
+			SliderCor.Text = ""
+			SliderCor.TextColor3 = Color3.fromRGB(255, 255, 255)
+			SliderCor.TextSize = 14.000
+
+			UICorner.Parent = SliderCor
+			
+			UIPadding_3.Parent = F
+			UIPadding_3.PaddingBottom = UDim.new(0, 3)
+			UIPadding_3.PaddingLeft = UDim.new(0, 3)
+			UIPadding_3.PaddingRight = UDim.new(0, 3)
+			UIPadding_3.PaddingTop = UDim.new(0, 3)
+
+			Vertical.Name = "Vertical"
+			Vertical.Parent = F
+			Vertical.AnchorPoint = Vector2.new(1, 0)
+			Vertical.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Vertical.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Vertical.BorderSizePixel = 0
+			Vertical.Position = UDim2.new(0.979838729, 0, 0, 0)
+			Vertical.Size = UDim2.new(0, 28, 0, 130)
+
+			UICorner_5.CornerRadius = UDim.new(0, 10)
+			UICorner_5.Parent = Vertical
+			
+			local UIPadding = Instance.new("UIPadding")
+			UIPadding.Parent = Vertical
+			UIPadding.PaddingBottom = UDim.new(0, 3)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Slide.Name = "Slide"
+			Slide.Parent = Vertical
+			Slide.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			Slide.BackgroundTransparency = 0
+			Slide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Slide.Position = UDim2.new(0.5, 0, 0, 0)
+			Slide.Size = UDim2.new(1, -8, 0, 5)
+			Slide.BorderSizePixel = 0
+			Slide.AnchorPoint = Vector2.new(0.5, 0)
+			Slide.Font = Enum.Font.SourceSans
+			Slide.Text = ""
+			Slide.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Slide.TextSize = 14.000
+			
+			local UICorner = Instance.new("UICorner")
+			UICorner.Parent = Slide
+			
+			local function Color()
+				if Options.ColorPickerType == "Rainbow" or  Options.ColorPickerType == "RAINBOW" or  Options.ColorPickerType == "rainbow" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 4)),
+						ColorSequenceKeypoint.new(0.20, Color3.fromRGB(255, 255, 0)),
+						ColorSequenceKeypoint.new(0.34, Color3.fromRGB(0, 255, 0)),
+						ColorSequenceKeypoint.new(0.54, Color3.fromRGB(0, 255, 255)),
+						ColorSequenceKeypoint.new(0.71, Color3.fromRGB(0, 0, 255)),
+						ColorSequenceKeypoint.new(0.87, Color3.fromRGB(255, 0, 255)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 0, 0))
+					}
+				elseif Options.ColorPickerType == "Rgb" or  Options.ColorPickerType == "RGB" or  Options.ColorPickerType == "rgb" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)),
+						ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 255, 0)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 255))
+					}
+				elseif Options.ColorPickerType == "AbsoluteRgb" or Options.ColorPickerType == "ABSOLUTERGB" or Options.ColorPickerType == "absoluteRGB" or Options.ColorPickerType == "absolutergb" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 0, 0)),
+						ColorSequenceKeypoint.new(0.27, Color3.fromRGB(255, 0, 0)),
+						ColorSequenceKeypoint.new(0.27, Color3.fromRGB(0, 255, 0)),
+						ColorSequenceKeypoint.new(0.65, Color3.fromRGB(0, 255, 0)),
+						ColorSequenceKeypoint.new(0.66, Color3.fromRGB(0, 0, 255)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 255))
+					}
+				elseif Options.ColorPickerType == "SkinColors" or Options.ColorPickerType == "Skincolors" or Options.ColorPickerType == "SKINCOLORS" or Options.ColorPickerType == "skincolors" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
+						ColorSequenceKeypoint.new(0.22, Color3.fromRGB(233, 145, 85)),
+						ColorSequenceKeypoint.new(0.32, Color3.fromRGB(232, 140, 78)),
+						ColorSequenceKeypoint.new(0.43, Color3.fromRGB(229, 120, 47)),
+						ColorSequenceKeypoint.new(0.60, Color3.fromRGB(94, 52, 28)),
+						ColorSequenceKeypoint.new(0.74, Color3.fromRGB(65, 38, 24)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(27, 19, 19))
+					}
+				elseif Options.ColorPickerType == "Grey" or Options.ColorPickerType == "GREY" or Options.ColorPickerType == "grey" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
+					}
+				elseif Options.ColorPickerType == "Cmyk" or Options.ColorPickerType == "CMYK" or Options.ColorPickerType == "cmyk" then
+					Rainbow.Color = ColorSequence.new{
+						ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)),
+						ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
+					}
+				end
+			end
+
+			Rainbow.Rotation = 90
+			Rainbow.Name = "Rainbow"
+			Rainbow.Parent = Vertical
+
+			Color() -- Chama a função para aplicar as cores
+			
+			Colorpicker:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+			
+			Title.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+						Colorpicker:TweenSize(UDim2.new(1, 0, 0, 170), Back, Out, 0.5, true)	
+						F.Visible = on
+					if on == false then
+						Colorpicker:TweenSize(UDim2.new(1, 0, 0, 27), Back, Out, 0.5, true)	
+						task.wait(0.1)
+						F.Visible = on
+					end
+				end
+			end)
+			
+			local frame = Vertical
+			local label = Slide
+			local cor = cor -- Supondo que "cor" é o nome da sua ImageButton ou ImageLabel
+
+			local dragging = false
+			local offset = 0
+
+			-- Função para atualizar a posição do label e a cor da imagem
+			local function updateLabelPosition(mouseY)
+				-- Limites do movimento dentro do Frame
+				local minY = 0
+				local maxY = frame.Size.Y.Offset - label.Size.Y.Offset
+
+				-- Restringir a posição Y do label dentro dos limites
+				local newY = math.clamp(mouseY - frame.AbsolutePosition.Y - offset, minY, maxY)
+				label.Position = UDim2.new(label.Position.X.Scale, label.Position.X.Offset, 0, newY)
+
+				-- Calcular a posição relativa do slider
+				local relativePositionY = newY / maxY
+
+				-- Atualizar a cor da imagem com base na posição do slider
+				local gradientColor = Color3.fromHSV(relativePositionY, 1, 1) -- Modifique aqui para o tipo de cor que você deseja
+				cor.ImageColor3 = gradientColor -- Muda a cor da imagem
+			end
+
+			-- Evento quando o mouse é pressionado no label
+			label.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = true
+
+					-- Captura o mouse aqui
+					local mouse = game.Players.LocalPlayer:GetMouse()
+					offset = mouse.Y - label.AbsolutePosition.Y -- Calcula o deslocamento do mouse
+				end
+			end)
+
+			-- Evento quando o mouse é solto
+			label.InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = false
+				end
+			end)
+
+			-- Evento para mover o label enquanto arrasta
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if dragging then
+					local mouse = game.Players.LocalPlayer:GetMouse() -- Captura o mouse a cada quadro
+					updateLabelPosition(mouse.Y)
+				end
+			end)
+			
+			local cor = cor -- O ImageButton que tem o gradiente
+			local sliderCor = SliderCor -- O label que serve como slider
+			local frame = cor.Parent -- O Frame que contém o gradiente
+
+			local dragging = false
+
+			-- Função para atualizar a posição do slider
+			local function updateSliderPosition(mouseX, mouseY)
+				local minX = 0
+				local maxX = frame.Size.X.Offset - sliderCor.Size.X.Offset
+				local minY = 0
+				local maxY = frame.Size.Y.Offset - sliderCor.Size.Y.Offset
+
+				-- Restringir a posição do slider dentro dos limites
+				local clampedX = math.clamp(mouseX, minX, maxX)
+				local clampedY = math.clamp(mouseY, minY, maxY)
+
+				sliderCor.Position = UDim2.new(0, clampedX, 0, clampedY)
+
+				return clampedX, clampedY
+			end
+
+			-- Função para obter a cor do ponto
+			local function getColorAtPosition(x, y)
+				local maxX = frame.Size.X.Offset - sliderCor.Size.X.Offset
+				local maxY = frame.Size.Y.Offset - sliderCor.Size.Y.Offset
+
+				-- Calcular a cor com base na posição (invertido se necessário)
+				local colorX = (x / maxX) -- A partir do preto (x=0) até o branco (x=maxX)
+				local colorY = 1 - (y / maxY) -- A partir do branco (y=0) até o preto (y=maxY)
+
+				return Color3.new(colorX, colorY, 0) -- Ajuste a fórmula conforme necessário
+			end
+
+			-- Evento quando o mouse é pressionado no label
+			sliderCor.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = true
+				end
+			end)
+
+			-- Evento quando o mouse é solto
+			sliderCor.InputEnded:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					dragging = false
+				end
+			end)
+
+			-- Atualiza a posição do slider enquanto arrasta
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if dragging then
+					local mouse = game.Players.LocalPlayer:GetMouse()
+					local mouseX = mouse.X - frame.AbsolutePosition.X -- Ajuste para o Frame
+					local mouseY = mouse.Y - frame.AbsolutePosition.Y -- Ajuste para o Frame
+
+					local clampedX, clampedY = updateSliderPosition(mouseX, mouseY)
+					local selectedColor = getColorAtPosition(clampedX, clampedY)
+
+					-- Aqui você pode usar selectedColor para aplicar onde necessário
+					View.BackgroundColor3 = selectedColor
+				end
+			end)
+
+			-- Teletransporta o slider quando clicar no frame
+			cor.InputBegan:Connect(function(input)
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					local mouse = game.Players.LocalPlayer:GetMouse()
+					local clickX = mouse.X - frame.AbsolutePosition.X
+					local clickY = mouse.Y - frame.AbsolutePosition.Y
+
+					local clampedX, clampedY = updateSliderPosition(clickX, clickY)
+					local selectedColor = getColorAtPosition(clampedX, clampedY)
+
+					-- Aqui você pode usar selectedColor para aplicar onde necessário
+					View.BackgroundColor3 = selectedColor
+				end
+			end)
+
+
+			return ColorPicker
+		end
+		
+		function Tab:AddNotify(Options)
+			Options.Title = Options.Title or "Preview Notify"
+			Options.Content = Options.Content or "No Content"
+			Options.Time = Options.Time or 10
+
+			local Notify = {}
+
+			local NotfyHolder = MyLibrary:FindFirstChild("NotfyHolder") or Instance.new("Frame")
+
+			if not NotfyHolder:IsDescendantOf(MyLibrary) then
+				NotfyHolder.Name = "NotfyHolder"
+				NotfyHolder.Parent = MyLibrary
+				NotfyHolder.AnchorPoint = Vector2.new(1, 1)
+				NotfyHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				NotfyHolder.BackgroundTransparency = 1
+				NotfyHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				NotfyHolder.BorderSizePixel = 0
+				NotfyHolder.Position = UDim2.new(1, 0, 1, -60)
+				NotfyHolder.Size = UDim2.new(0, 200, 0, 400)
+
+				local UIListLayout = Instance.new("UIListLayout")
+				UIListLayout.Parent = NotfyHolder
+				UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+				UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+				UIListLayout.Padding = UDim.new(0, 3)
+			end
+
+			local MainNot = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Hide = Instance.new("Frame")
+			local TopBar = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Line = Instance.new("Frame")
+			local ContentHolder = Instance.new("Frame")
+			local Content = Instance.new("TextLabel")
+			local UIPadding_2 = Instance.new("UIPadding")
+
+			-- Properties:
+
+			MainNot.Name = "MainNot"
+			MainNot.Parent = NotfyHolder
+			MainNot.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			MainNot.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			MainNot.BackgroundTransparency = 0.080
+			MainNot.AnchorPoint = Vector2.new(1, 1)
+			MainNot.BorderSizePixel = 0
+			MainNot.Size = UDim2.new(0, 200, 0, 70)
+			MainNot.LayoutOrder = #NotfyHolder:GetChildren() + 1  -- Para garantir a ordem correta
+
+			UICorner.Parent = MainNot
+
+			Hide.Name = "Hide"
+			Hide.Parent = MainNot
+			Hide.AnchorPoint = Vector2.new(1, 0)
+			Hide.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Hide.BackgroundTransparency = 0.09
+			Hide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Hide.BorderSizePixel = 0
+			Hide.Position = UDim2.new(1, 0, 0, 0)
+			Hide.Size = UDim2.new(0, 6, 1, 0)
+
+			TopBar.Name = "TopBar"
+			TopBar.Parent = MainNot
+			TopBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			TopBar.BackgroundTransparency = 1
+			TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TopBar.BorderSizePixel = 0
+			TopBar.Size = UDim2.new(1, 0, 0, 22)
+
+			Title.Name = "Title"
+			Title.Parent = TopBar
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0.5, 0, 1, 0)
+			Title.Font = Enum.Font.SourceSansBold
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextSize = 15
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Title
+			UIPadding.PaddingLeft = UDim.new(0, 5)
+
+			Line.Name = "Line"
+			Line.Parent = TopBar
+			Line.AnchorPoint = Vector2.new(0, 1)
+			Line.BackgroundColor3 = Color3.fromRGB(190, 190, 190)
+			Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Line.BorderSizePixel = 0
+			Line.Position = UDim2.new(0, 0, 1, 0)
+			Line.Size = UDim2.new(1, 0, 0, 1)
+
+			ContentHolder.Name = "ContentHolder"
+			ContentHolder.Parent = MainNot
+			ContentHolder.AnchorPoint = Vector2.new(0, 1)
+			ContentHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ContentHolder.BackgroundTransparency = 1
+			ContentHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ContentHolder.BorderSizePixel = 0
+			ContentHolder.Position = UDim2.new(0, 0, 1, 0)
+			ContentHolder.Size = UDim2.new(1, 0, 1, -22)
+
+			Content.Name = "Content"
+			Content.Parent = ContentHolder
+			Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Content.BackgroundTransparency = 1
+			Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Content.BorderSizePixel = 0
+			Content.Size = UDim2.new(1, 0, 1, 0)
+			Content.Font = Enum.Font.SourceSansBold
+			Content.Text = Options.Content
+			Content.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Content.TextSize = 12
+			Content.TextWrapped = true
+			Content.TextXAlignment = Enum.TextXAlignment.Left
+			Content.TextYAlignment = Enum.TextYAlignment.Top
+
+			UIPadding_2.Parent = Content
+			UIPadding_2.PaddingLeft = UDim.new(0, 6)
+
+			-- Remove a notificação após o tempo especificado
+			task.delay(Options.Time, function()
+				MainNot:Destroy()
+			end)
+
+			return Notify
+		end
+		
+		function Tab:AddDialog(Options)
+			Options.Title = Options.Title or "Preview Dialog"
+			Options.Content = Options.Content or "Content Dialog"
+			Options.Buttons = Options.Buttons or {}
+			Options.Callback = Options.Callback or function() end
+
+			local Dialog = {}
+
+			local MainDialog = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local TopBar = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local Hide = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Line = Instance.new("Frame")
+			local ButtonBar = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local Hide_2 = Instance.new("Frame")
+			local Line_2 = Instance.new("Frame")
+			local h = Instance.new("Frame")
+			local UIListLayout = Instance.new("UIListLayout")
+			local ContentHolderDia = Instance.new("Frame")
+			local UIPadding_3 = Instance.new("UIPadding")
+			local Content = Instance.new("TextLabel")
+			local UIPadding_4 = Instance.new("UIPadding")
+
+			-- Properties:
+
+			MainDialog.Name = "MainDialog"
+			MainDialog.Parent = MyLibrary
+			MainDialog.AnchorPoint = Vector2.new(0.5, 0.5)
+			MainDialog.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			MainDialog.BackgroundTransparency = 0.080
+			MainDialog.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			MainDialog.BorderSizePixel = 0
+			MainDialog.Position = UDim2.new(0.5, -700, 0.5, 0)
+			MainDialog.Size = UDim2.new(0, 300, 0, 160)
+
+			UICorner.Parent = MainDialog
+
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = MainDialog
+			
+			local DropShadowHolder = Instance.new("Frame")
+			local DropShadow = Instance.new("ImageLabel")
+
+			--Properties:
+
+			DropShadowHolder.Name = "DropShadowHolder"
+			DropShadowHolder.Parent = MainDialog
+			DropShadowHolder.BackgroundTransparency = 1.000
+			DropShadowHolder.BorderSizePixel = 0
+			DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
+			DropShadowHolder.ZIndex = 0
+
+			DropShadow.Name = "DropShadow"
+			DropShadow.Parent = DropShadowHolder
+			DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+			DropShadow.BackgroundTransparency = 1.000
+			DropShadow.BorderSizePixel = 0
+			DropShadow.Position = UDim2.new(0.5, 0, 0.5, 0)
+			DropShadow.Size = UDim2.new(1, 47, 1, 47)
+			DropShadow.ZIndex = 0
+			DropShadow.Image = "rbxassetid://6014261993"
+			DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+			DropShadow.ImageTransparency = 0.500
+			DropShadow.ScaleType = Enum.ScaleType.Slice
+			DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
+
+			TopBar.Name = "TopBar"
+			TopBar.Parent = MainDialog
+			TopBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TopBar.BorderSizePixel = 0
+			TopBar.Size = UDim2.new(1, 0, 0, 30)
+
+			UICorner_2.Parent = TopBar
+
+			Hide.Name = "Hide"
+			Hide.Parent = TopBar
+			Hide.AnchorPoint = Vector2.new(0, 1)
+			Hide.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Hide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Hide.BorderSizePixel = 0
+			Hide.Position = UDim2.new(0, 0, 1, 0)
+			Hide.Size = UDim2.new(1, 0, 0, 15)
+
+			Title.Name = "Title"
+			Title.Parent = TopBar
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0.5, 0, 1, 0)
+			Title.Font = Enum.Font.Unknown
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Title.TextSize = 12.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Title
+			UIPadding.PaddingLeft = UDim.new(0, 7)
+
+			Line.Name = "Line"
+			Line.Parent = TopBar
+			Line.AnchorPoint = Vector2.new(0, 1)
+			Line.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+			Line.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Line.BorderSizePixel = 0
+			Line.Position = UDim2.new(0, 0, 1, 0)
+			Line.Size = UDim2.new(1, 0, 0, 1)
+
+			ButtonBar.Name = "ButtonBar"
+			ButtonBar.Parent = MainDialog
+			ButtonBar.AnchorPoint = Vector2.new(0, 1)
+			ButtonBar.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			ButtonBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ButtonBar.BorderSizePixel = 0
+			ButtonBar.Position = UDim2.new(0, 0, 1, 0)
+			ButtonBar.Size = UDim2.new(1, 0, 0, 30)
+
+			UICorner_3.Parent = ButtonBar
+
+			Hide_2.Name = "Hide"
+			Hide_2.Parent = ButtonBar
+			Hide_2.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Hide_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Hide_2.BorderSizePixel = 0
+			Hide_2.Size = UDim2.new(1, 0, 0, 15)
+
+			Line_2.Name = "Line"
+			Line_2.Parent = ButtonBar
+			Line_2.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+			Line_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Line_2.BorderSizePixel = 0
+			Line_2.Size = UDim2.new(1, 0, 0, 1)
+
+			h.Name = "h"
+			h.Parent = ButtonBar
+			h.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			h.BackgroundTransparency = 1.000
+			h.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			h.BorderSizePixel = 0
+			h.Size = UDim2.new(1, 0, 1, 0)
+
+			UIPadding_2 = Instance.new("UIPadding")
+			UIPadding_2.Parent = h
+			UIPadding_2.PaddingBottom = UDim.new(0, 3)
+			UIPadding_2.PaddingLeft = UDim.new(0, 3)
+			UIPadding_2.PaddingRight = UDim.new(0, 3)
+			UIPadding_2.PaddingTop = UDim.new(0, 3)
+
+			UIListLayout.Parent = h
+			UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+			UIListLayout.Padding = UDim.new(0, 5)
+
+			ContentHolderDia.Name = "ContentHolderDia"
+			ContentHolderDia.Parent = MainDialog
+			ContentHolderDia.AnchorPoint = Vector2.new(0, 1)
+			ContentHolderDia.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ContentHolderDia.BackgroundTransparency = 1.000
+			ContentHolderDia.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ContentHolderDia.BorderSizePixel = 0
+			ContentHolderDia.Position = UDim2.new(0, 0, 1, -30)
+			ContentHolderDia.Size = UDim2.new(1, 0, 1, -60)
+
+			UIPadding_3.Parent = ContentHolderDia
+			UIPadding_3.PaddingBottom = UDim.new(0, 1)
+			UIPadding_3.PaddingLeft = UDim.new(0, 1)
+			UIPadding_3.PaddingRight = UDim.new(0, 1)
+			UIPadding_3.PaddingTop = UDim.new(0, 1)
+
+			Content.Name = "Content"
+			Content.Parent = ContentHolderDia
+			Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Content.BackgroundTransparency = 1.000
+			Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Content.BorderSizePixel = 0
+			Content.Size = UDim2.new(1, 0, 1, 0)
+			Content.Font = Enum.Font.Unknown
+			Content.Text = Options.Content
+			Content.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Content.TextSize = 12.000
+			Content.TextWrapped = true
+			Content.TextYAlignment = Enum.TextYAlignment.Top
+
+			UIPadding_4.Parent = Content
+			UIPadding_4.PaddingBottom = UDim.new(0, 7)
+			UIPadding_4.PaddingLeft = UDim.new(0, 7)
+			UIPadding_4.PaddingRight = UDim.new(0, 7)
+			UIPadding_4.PaddingTop = UDim.new(0, 7)
+			
+			MainDialog:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), Back, Out, 0.5, true)
+			
+			-- Criar uma camada de Acrylic Effect diretamente dentro do Main
+			local AcrylicEffect = Instance.new("Frame")
+			AcrylicEffect.Parent = MainDialog
+			AcrylicEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			AcrylicEffect.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			AcrylicEffect.BackgroundTransparency = 0.7 -- Transparência do acrílico
+			AcrylicEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			AcrylicEffect.Size = UDim2.new(1, 0, 1, 0)
+			AcrylicEffect.ZIndex = 1
+
+			-- Definir um UICorner para bordas arredondadas no AcrylicEffect
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = AcrylicEffect
+
+			-- Adicionar um gradiente ao acrílico para suavizar a transição de opacidade
+			local UIGradient_4 = Instance.new("UIGradient")
+			UIGradient_4.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_4.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0.4),
+				NumberSequenceKeypoint.new(1, 1)
+			} -- Gradiente de opacidade
+			UIGradient_4.Rotation = 90
+			UIGradient_4.Parent = AcrylicEffect
+
+			-- Criar um efeito de desfoque que afeta apenas o Main
+			local BlurEffect = Instance.new("Frame")
+			BlurEffect.Parent = AcrylicEffect
+			BlurEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			BlurEffect.BackgroundTransparency = 1
+			BlurEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			BlurEffect.Size = UDim2.new(1, 0, 1, 0)
+			BlurEffect.ZIndex = 1
+
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = BlurEffect
+
+			-- Aplicar o efeito de Blur dentro do Main
+			local UIGradient_5 = Instance.new("UIGradient")
+			UIGradient_5.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_5.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0),
+				NumberSequenceKeypoint.new(1, 0.5)
+			}
+			UIGradient_5.Rotation = 90
+			UIGradient_5.Parent = BlurEffect
+
+			-- Opacidade suave do Blur
+			local blurTween = game:GetService("TweenService"):Create(BlurEffect, TweenInfo.new(0.5), {BackgroundTransparency = 0.9})
+			blurTween:Play()
+
+			-- Criação dos botões dinamicamente
+			for buttonName, buttonInfo in pairs(Options.Buttons) do
+				local Button = Instance.new("TextLabel")
+				Button.Name = buttonName
+				Button.Parent = h
+				Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Button.BackgroundTransparency = 1.000
+				Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Button.BorderSizePixel = 0
+				Button.Size = UDim2.new(0.5, -5, 1, -3)
+				Button.Font = Enum.Font.Unknown
+				Button.Text = buttonInfo.Title or buttonName
+				Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Button.TextSize = 12.000
+
+				local UICornerButton = Instance.new("UICorner")
+				UICornerButton.CornerRadius = UDim.new(0, 5)
+				UICornerButton.Parent = Button
+
+				local s2 = Instance.new("UIStroke")
+				s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+				s2.Color = Color3.fromRGB(255, 255, 255)
+				s2.Thickness = 0.8
+				s2.Transparency = 0.3
+				s2.Parent = Button
+
+				Button.InputBegan:Connect(function(input, gameProcessed)
+					if gameProcessed then return end
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+						if buttonInfo.Callback then
+							buttonInfo.Callback()
+						end
+						MainDialog:TweenPosition(UDim2.new(0.5, 700, 0.5, 0), Back, Out, 0.5, true)
+						task.wait(1)
+						MainDialog:Destroy()
+					end
+				end)
+			end
+
+			return Dialog
+		end
+		
+		function Tab:AddHumanoid(Options)
+			Options.Title = Options.Title or "Preview Humanoid"
+			Options.Default = Options.Default or "Head"
+			Options.Callback = Options.Callback or function() end
+			
+			local Humanoidy = {}
+			local on = false
+
+			local Humanoid = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+
+			--Properties:
+
+			Humanoid.Name = "Humanoid"
+			Humanoid.Parent = TabHome
+			Humanoid.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Humanoid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Humanoid.BorderSizePixel = 0
+			Humanoid.Size = UDim2.new(1, 0, 0, 32)
+			
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = Humanoid
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Humanoid
+
+			Title.Name = "Title"
+			Title.Parent = Humanoid
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, -20, 1, 0)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Humanoid
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Icon.Name = "Icon"
+			Icon.Parent = Humanoid
+			Icon.AnchorPoint = Vector2.new(1, 0)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(1, 0, 0, 0)
+			Icon.Size = UDim2.new(0, 20, 0, 20)
+			Icon.Image = "rbxassetid://7743875962"
+			
+
+			local HumanoidContent = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Humanoid = Instance.new("ImageLabel")
+			local H = Instance.new("TextLabel")
+			local UICorner_2 = Instance.new("UICorner")
+			local T = Instance.new("TextLabel")
+			local UICorner_3 = Instance.new("UICorner")
+			local BD = Instance.new("TextLabel")
+			local UICorner_4 = Instance.new("UICorner")
+			local PE = Instance.new("TextLabel")
+			local UICorner_5 = Instance.new("UICorner")
+			local BE = Instance.new("TextLabel")
+			local UICorner_6 = Instance.new("UICorner")
+			local PD = Instance.new("TextLabel")
+			local UICorner_7 = Instance.new("UICorner")
+
+			--Properties:
+
+			HumanoidContent.Name = "HumanoidContent"
+			HumanoidContent.Parent = Main
+			HumanoidContent.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			HumanoidContent.BackgroundTransparency = 0.080
+			HumanoidContent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			HumanoidContent.BorderSizePixel = 0
+			HumanoidContent.Visible = on
+			HumanoidContent.ZIndex = -1
+			HumanoidContent.AnchorPoint = Vector2.new(0.5, 0.5)
+			HumanoidContent.Position = UDim2.new(0.5, 0, 0.4, -32)
+			HumanoidContent.Size = UDim2.new(0, 130, 0, 170)
+
+			UICorner.Parent = HumanoidContent
+
+			Humanoid.Name = "Humanoid"
+			Humanoid.Parent = HumanoidContent
+			Humanoid.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			Humanoid.BackgroundTransparency = 1.000
+			Humanoid.BorderColor3 = Color3.fromRGB(255, 255, 255)
+			Humanoid.BorderSizePixel = 0
+			Humanoid.ZIndex = 0
+			Humanoid.Size = UDim2.new(1, 0, 1, 0)
+			Humanoid.Image = "http://www.roblox.com/asset/?id=17228463089"
+			Humanoid.ImageColor3 = Color3.fromRGB(200, 200, 200)
+			Humanoid.ScaleType = Enum.ScaleType.Tile
+
+			H.Name = "H"
+			H.Parent = Humanoid
+			H.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			H.BackgroundTransparency = 1.000
+			H.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			H.BorderSizePixel = 0
+			H.Position = UDim2.new(0.346153855, 0, 0, 0)
+			H.Size = UDim2.new(0, 40, 0, 40)
+			H.Font = Enum.Font.SourceSans
+			H.Text = ""
+			H.TextColor3 = Color3.fromRGB(0, 0, 0)
+			H.TextSize = 14.000
+
+			UICorner_2.Parent = H
+
+			T.Name = "T"
+			T.Parent = Humanoid
+			T.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			T.BackgroundTransparency = 1.000
+			T.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			T.BorderSizePixel = 0
+			T.Position = UDim2.new(0.246384844, 0, 0.224000007, -1)
+			T.Size = UDim2.new(0, 66, 0, 67)
+			T.Font = Enum.Font.SourceSans
+			T.Text = ""
+			T.TextColor3 = Color3.fromRGB(0, 0, 0)
+			T.TextSize = 14.000
+
+			UICorner_3.Parent = T
+
+			BD.Name = "BD"
+			BD.Parent = Humanoid
+			BD.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			BD.BackgroundTransparency = 1.000
+			BD.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			BD.BorderSizePixel = 0
+			BD.Position = UDim2.new(0.754077137, 0, 0.224000007, -1)
+			BD.Size = UDim2.new(0, 31, 0, 67)
+			BD.Font = Enum.Font.SourceSans
+			BD.Text = ""
+			BD.TextColor3 = Color3.fromRGB(0, 0, 0)
+			BD.TextSize = 14.000
+
+			UICorner_4.Parent = BD
+
+			PE.Name = "PE"
+			PE.Parent = Humanoid
+			PE.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			PE.BackgroundTransparency = 1.000
+			PE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			PE.BorderSizePixel = 0
+			PE.Position = UDim2.new(0.246384844, 0, 0.61811763, -1)
+			PE.Size = UDim2.new(0, 31, 0, 67)
+			PE.Font = Enum.Font.SourceSans
+			PE.Text = ""
+			PE.TextColor3 = Color3.fromRGB(0, 0, 0)
+			PE.TextSize = 14.000
+
+			UICorner_5.Parent = PE
+
+			BE.Name = "BE"
+			BE.Parent = Humanoid
+			BE.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			BE.BackgroundTransparency = 1.000
+			BE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			BE.BorderSizePixel = 0
+			BE.Position = UDim2.new(0.00792330224, 0, 0.224000007, -1)
+			BE.Size = UDim2.new(0, 31, 0, 67)
+			BE.Font = Enum.Font.SourceSans
+			BE.Text = ""
+			BE.TextColor3 = Color3.fromRGB(0, 0, 0)
+			BE.TextSize = 14.000
+
+			UICorner_6.Parent = BE
+
+			PD.Name = "PD"
+			PD.Parent = Humanoid
+			PD.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			PD.BackgroundTransparency = 1.000
+			PD.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			PD.BorderSizePixel = 0
+			PD.Position = UDim2.new(0.515615582, 0, 0.618117571, -1)
+			PD.Size = UDim2.new(0, 31, 0, 67)
+			PD.Font = Enum.Font.SourceSans
+			PD.Text = ""
+			PD.TextColor3 = Color3.fromRGB(0, 0, 0)
+			PD.TextSize = 14.000
+
+			UICorner_7.Parent = PD
+			
+			local AcrylicEffect = Instance.new("Frame")
+			AcrylicEffect.Parent = HumanoidContent
+			AcrylicEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			AcrylicEffect.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			AcrylicEffect.BackgroundTransparency = 0.7 -- Transparência do acrílico
+			AcrylicEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			AcrylicEffect.Size = UDim2.new(1, 0, 1, 0)
+			AcrylicEffect.ZIndex = 1
+
+			-- Definir um UICorner para bordas arredondadas no AcrylicEffect
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = AcrylicEffect
+
+			-- Adicionar um gradiente ao acrílico para suavizar a transição de opacidade
+			local UIGradient_4 = Instance.new("UIGradient")
+			UIGradient_4.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_4.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0.4),
+				NumberSequenceKeypoint.new(1, 1)
+			} -- Gradiente de opacidade
+			UIGradient_4.Rotation = 90
+			UIGradient_4.Parent = AcrylicEffect
+
+			-- Criar um efeito de desfoque que afeta apenas o Main
+			local BlurEffect = Instance.new("Frame")
+			BlurEffect.Parent = AcrylicEffect
+			BlurEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			BlurEffect.BackgroundTransparency = 1
+			BlurEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			BlurEffect.Size = UDim2.new(1, 0, 1, 0)
+			BlurEffect.ZIndex = 1
+			
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = BlurEffect
+
+			-- Aplicar o efeito de Blur dentro do Main
+			local UIGradient_5 = Instance.new("UIGradient")
+			UIGradient_5.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_5.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0),
+				NumberSequenceKeypoint.new(1, 0.5)
+			}
+			UIGradient_5.Rotation = 90
+			UIGradient_5.Parent = BlurEffect
+
+			-- Opacidade suave do Blur
+			local blurTween = game:GetService("TweenService"):Create(BlurEffect, TweenInfo.new(0.5), {BackgroundTransparency = 0.9})
+			blurTween:Play()
+			
+			Options.Callback(Options.Default)
+			
+			HumanoidContent:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+			
+			-- Assuming 'H', 'T', 'BD', 'PE', 'BE', and 'PD' are the body part labels
+			local function createClickablePart(part, partName)
+				part.InputBegan:Connect(function(input, gameProcessed)
+					if gameProcessed then return end
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+						Options.Callback(partName)  -- Call the callback with the part name
+					end
+				end)
+			end
+
+			-- Connect the parts to the callback
+			createClickablePart(H, "Head")
+			createClickablePart(T, "HumanoidRootPart")
+			createClickablePart(BD, "Body Down")  -- Or whatever name is appropriate
+			createClickablePart(PE, "Left Leg")    -- Adjust as needed
+			createClickablePart(BE, "Left Arm")    -- Adjust as needed
+			createClickablePart(PD, "Right Leg")   -- Adjust as needed
+
+			-- Existing Title input handler
+			Title.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+					HumanoidContent.Visible = true
+					HumanoidContent:TweenPosition(UDim2.new(0.5, 280, 0.4, -32), Back, Out, 0.5, true)
+					if on == false then
+						HumanoidContent:TweenPosition(UDim2.new(0.5, 0, 0.4, -32), Out, Back, 0.5, true)
+						task.wait(0.2)
+						HumanoidContent.Visible = on
+					end
+				end
+			end)
+
+			
+			return Humanoidy
+		end
+		
+		function Tab:AddKeyBind(Options)
+			Options.Title = Options.Title or "Preview KeyBind"
+			Options.Default = Options.Default or ""
+			Options.Callback = Options.Callback or function() end
+
+			local KeyBindFrame = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Text = Instance.new("TextBox")
+			local UICorner_2 = Instance.new("UICorner")
+
+			-- Properties:
+
+			KeyBindFrame.Name = "KeyBind"
+			KeyBindFrame.Parent = TabHome
+			KeyBindFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			KeyBindFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			KeyBindFrame.BorderSizePixel = 0
+			KeyBindFrame.Size = UDim2.new(1, 0, 0, 32)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = KeyBindFrame
+
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = KeyBindFrame
+
+			Title.Name = "Title"
+			Title.Parent = KeyBindFrame
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0.5, 30, 1, 0)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = KeyBindFrame
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Text.Name = "Text"
+			Text.Parent = KeyBindFrame
+			Text.AnchorPoint = Vector2.new(1, 0)
+			Text.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			Text.BackgroundTransparency = 0.080
+			Text.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Text.BorderSizePixel = 0
+			Text.ClipsDescendants = true
+			Text.Position = UDim2.new(1, 0, 0, 0)
+			Text.Size = UDim2.new(0, 75, 1, 0)
+			Text.Font = Enum.Font.SourceSans
+			Text.PlaceholderText = "[...]"
+			Text.Text = Options.Default
+			Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Text.TextSize = 12.000
+			Text.TextWrapped = true
+
+			UICorner_2.CornerRadius = UDim.new(0, 5)
+			UICorner_2.Parent = Text
+			
+			KeyBindFrame:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			local lastValue = Text.Text -- Armazena o último valor válido
+			
+			Options.Callback(Options.Default)
+
+			-- Filtro para o TextBox
+			Text:GetPropertyChangedSignal("Text"):Connect(function()
+				local input = Text.Text
+				local filtered = input:upper() -- Converte para maiúscula
+
+				if filtered:len() > 1 then
+					filtered = filtered:sub(1, 1) -- Permite apenas a primeira letra
+				end
+
+				-- Verifica se é uma letra
+				if not filtered:match("%a") then
+					filtered = "" -- Limpa o texto se não for uma letra
+				end
+
+				-- Atualiza o TextBox
+				if Text.Text ~= filtered then
+					Text.Text = filtered -- Atualiza o TextBox
+					Text.CursorPosition = #Text.Text -- Move o cursor para o final
+				end
+
+				-- Chama o callback apenas se o valor mudou
+				if lastValue ~= filtered then
+					lastValue = filtered
+					Options.Callback(filtered)
+				end
+			end)
+
+			return KeyBindFrame
+		end
+		
+		function Tab:AddTogglePlay(Options)
+			Options.Title = Options.Title or "Preview Toggle Play"
+			Options.Default = Options.Default or false
+			Options.Callback = Options.Callback or function(Value) end
+
+			local TogglePl = {}
+
+			local TogglePlay = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+
+			-- Properties:
+
+			TogglePlay.Name = "TogglePlay"
+			TogglePlay.Parent = TabHome
+			TogglePlay.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			TogglePlay.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TogglePlay.BorderSizePixel = 0
+			TogglePlay.Size = UDim2.new(1, 0, 0, 32)
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = TogglePlay
+			
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = TogglePlay
+
+			Title.Name = "Title"
+			Title.Parent = TogglePlay
+			Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(1, 0, 1, 0)
+			Title.Font = Enum.Font.Ubuntu
+			Title.Text = Options.Title
+			Title.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title.TextSize = 14.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = TogglePlay
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Icon.Name = "Icon"
+			Icon.Parent = TogglePlay
+			Icon.AnchorPoint = Vector2.new(1, 0)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(1, 0, 0, 0)
+			Icon.Size = UDim2.new(0, 20, 0, 20)
+
+			-- Configura a imagem inicial com base no estado padrão
+			if Options.Default then
+				Icon.Image = "rbxassetid://7734021897"  -- Imagem ON
+			else
+				Icon.Image = "rbxassetid://7743871480"  -- Imagem OFF
+			end
+			Icon.ImageColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.ScaleType = Enum.ScaleType.Fit
+
+			TogglePlay:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+
+			local on = Options.Default
+
+			Title.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+					-- Atualiza a imagem e chama o callback de acordo com o novo estado
+					if on then
+						Icon.Image = "rbxassetid://7734021897"  -- Imagem ON
+					else
+						Icon.Image = "rbxassetid://7743871480"  -- Imagem OFF
+					end
+					Options.Callback(on)  -- Chama o callback com o novo estado
+				end
+			end)
+
+			return TogglePl
+		end
+		
+		function Tab:AddPlayerList(Options)
+			Options.Title = Options.Title or "Preview Player List"
+			Options.Callback = Options.Callback or function(Value) end
+			
+			local Pl = {}
+			local on = false
+
+			local Humanoid = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local Title1 = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Icon = Instance.new("ImageLabel")
+
+			--Properties:
+
+			Humanoid.Name = "Humanoid"
+			Humanoid.Parent = TabHome
+			Humanoid.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+			Humanoid.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Humanoid.BorderSizePixel = 0
+			Humanoid.Size = UDim2.new(1, 0, 0, 32)
+			
+			local s2 = Instance.new("UIStroke")
+			s2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+			s2.Color = Color3.fromRGB(255, 255, 255)
+			s2.Thickness = 0.8
+			s2.Transparency = 0.3
+			s2.Parent = Humanoid
+
+			UICorner.CornerRadius = UDim.new(0, 6)
+			UICorner.Parent = Humanoid
+
+			Title1.Name = "Title"
+			Title1.Parent = Humanoid
+			Title1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Title1.BackgroundTransparency = 1.000
+			Title1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title1.BorderSizePixel = 0
+			Title1.Size = UDim2.new(1, -20, 1, 0)
+			Title1.Font = Enum.Font.Ubuntu
+			Title1.Text = Options.Title
+			Title1.TextColor3 = Color3.fromRGB(240, 240, 240)
+			Title1.TextSize = 14.000
+			Title1.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Humanoid
+			UIPadding.PaddingBottom = UDim.new(0, 6)
+			UIPadding.PaddingLeft = UDim.new(0, 6)
+			UIPadding.PaddingRight = UDim.new(0, 6)
+			UIPadding.PaddingTop = UDim.new(0, 6)
+
+			Icon.Name = "Icon"
+			Icon.Parent = Humanoid
+			Icon.AnchorPoint = Vector2.new(1, 0)
+			Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Icon.BackgroundTransparency = 1.000
+			Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Icon.BorderSizePixel = 0
+			Icon.Position = UDim2.new(1, 0, 0, 0)
+			Icon.Size = UDim2.new(0, 20, 0, 20)
+			Icon.Image = "rbxassetid://7743876054"
+			
+			local ContentPlayerList = Instance.new("Frame")
+			local UICorner = Instance.new("UICorner")
+			local TopBar = Instance.new("Frame")
+			local UICorner_2 = Instance.new("UICorner")
+			local Hide = Instance.new("Frame")
+			local Frame = Instance.new("Frame")
+			local Title = Instance.new("TextLabel")
+			local UIPadding = Instance.new("UIPadding")
+			local Content = Instance.new("Frame")
+			local con = Instance.new("ScrollingFrame")
+			local UIListLayout = Instance.new("UIListLayout")
+			local UIPadding_2 = Instance.new("UIPadding")
+			
+			--Properties:
+
+			ContentPlayerList.Name = "ContentPlayerList"
+			ContentPlayerList.Parent = Main
+			ContentPlayerList.AnchorPoint = Vector2.new(0.5, 0.5)
+			ContentPlayerList.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			ContentPlayerList.BackgroundTransparency = 0.080
+			ContentPlayerList.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ContentPlayerList.BorderSizePixel = 0
+			ContentPlayerList.Visible = false
+			ContentPlayerList.Position = UDim2.new(0.5, 0, 0.4, 10)
+			ContentPlayerList.Size = UDim2.new(0, 268, 0, 260)
+			ContentPlayerList.ZIndex = -1
+
+			UICorner.Parent = ContentPlayerList
+
+			TopBar.Name = "TopBar"
+			TopBar.Parent = ContentPlayerList
+			TopBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+			TopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			TopBar.BorderSizePixel = 0
+			TopBar.ZIndex = 0
+			TopBar.Size = UDim2.new(1, 0, 0, 30)
+
+			UICorner_2.Parent = TopBar
+
+			Hide.Name = "Hide"
+			Hide.Parent = TopBar
+			Hide.AnchorPoint = Vector2.new(0, 1)
+			Hide.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+			Hide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Hide.BorderSizePixel = 0
+			Hide.ZIndex = 0
+			Hide.Position = UDim2.new(0, 0, 1, 0)
+			Hide.Size = UDim2.new(1, 0, 0, 15)
+
+			Frame.Parent = TopBar
+			Frame.AnchorPoint = Vector2.new(0, 1)
+			Frame.BackgroundColor3 = Color3.fromRGB(81, 81, 81)
+			Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Frame.BorderSizePixel = 0
+			Frame.ZIndex = 0
+			Frame.Position = UDim2.new(0, 0, 1, 0)
+			Frame.Size = UDim2.new(1, 0, 0, 1)
+
+			Title.Name = "Title"
+			Title.Parent = TopBar
+			Title.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+			Title.BackgroundTransparency = 1.000
+			Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Title.BorderSizePixel = 0
+			Title.Size = UDim2.new(0.5, 0, 1, 0)
+			Title.Font = Enum.Font.Unknown
+			Title.Text = Options.Title
+			Title.ZIndex = 0
+			Title.TextColor3 = Color3.fromRGB(200, 200, 200)
+			Title.TextSize = 12.000
+			Title.TextXAlignment = Enum.TextXAlignment.Left
+
+			UIPadding.Parent = Title
+			UIPadding.PaddingLeft = UDim.new(0, 7)
+
+			Content.Name = "Content"
+			Content.Parent = ContentPlayerList
+			Content.AnchorPoint = Vector2.new(0, 1)
+			Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Content.BackgroundTransparency = 1.000
+			Content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			Content.BorderSizePixel = 0
+			Content.Position = UDim2.new(0, 0, 1, 0)
+			Content.Size = UDim2.new(1, 0, 1, -30)
+
+			con.Name = "con"
+			con.Parent = Content
+			con.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			con.BackgroundTransparency = 1.000
+			con.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			con.BorderSizePixel = 0
+			con.Selectable = false
+			con.Size = UDim2.new(1, 0, 1, 0)
+			con.ScrollBarThickness = 0
+
+			UIListLayout.Parent = con
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			UIListLayout.Padding = UDim.new(0, 5)
+
+			UIPadding_2.Parent = con
+			UIPadding_2.PaddingBottom = UDim.new(0, 4)
+			UIPadding_2.PaddingLeft = UDim.new(0, 4)
+			UIPadding_2.PaddingRight = UDim.new(0, 4)
+			UIPadding_2.PaddingTop = UDim.new(0, 4)
+
+			
+			
+			-- Criar uma camada de Acrylic Effect diretamente dentro do Main
+			local AcrylicEffect = Instance.new("Frame")
+			AcrylicEffect.Parent = ContentPlayerList
+			AcrylicEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			AcrylicEffect.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+			AcrylicEffect.BackgroundTransparency = 0.7 -- Transparência do acrílico
+			AcrylicEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			AcrylicEffect.Size = UDim2.new(1, 0, 1, 0)
+			AcrylicEffect.ZIndex = 1
+
+			-- Definir um UICorner para bordas arredondadas no AcrylicEffect
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = AcrylicEffect
+
+			-- Adicionar um gradiente ao acrílico para suavizar a transição de opacidade
+			local UIGradient_4 = Instance.new("UIGradient")
+			UIGradient_4.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_4.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0.4),
+				NumberSequenceKeypoint.new(1, 1)
+			} -- Gradiente de opacidade
+			UIGradient_4.Rotation = 90
+			UIGradient_4.Parent = AcrylicEffect
+
+			-- Criar um efeito de desfoque que afeta apenas o Main
+			local BlurEffect = Instance.new("Frame")
+			BlurEffect.Parent = AcrylicEffect
+			BlurEffect.AnchorPoint = Vector2.new(0.5, 0.5)
+			BlurEffect.BackgroundTransparency = 1
+			BlurEffect.Position = UDim2.new(0.5, 0, 0.5, 0)
+			BlurEffect.Size = UDim2.new(1, 0, 1, 0)
+			BlurEffect.ZIndex = 1
+			
+			local UICorner_5 = Instance.new("UICorner")
+			UICorner_5.CornerRadius = UDim.new(0, 8)
+			UICorner_5.Parent = BlurEffect
+
+			-- Aplicar o efeito de Blur dentro do Main
+			local UIGradient_5 = Instance.new("UIGradient")
+			UIGradient_5.Color = ColorSequence.new{
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 0, 0))
+			}
+			UIGradient_5.Transparency = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0),
+				NumberSequenceKeypoint.new(1, 0.5)
+			}
+			UIGradient_5.Rotation = 90
+			UIGradient_5.Parent = BlurEffect
+
+			-- Opacidade suave do Blur
+			local blurTween = game:GetService("TweenService"):Create(BlurEffect, TweenInfo.new(0.5), {BackgroundTransparency = 0.9})
+			blurTween:Play()
+			
+			local Players = game:GetService("Players")
+			local LocalPlayer = Players.LocalPlayer
+
+			local function UpdatePlayerList()
+				local players = Players:GetPlayers()
+				for _, player in ipairs(players) do
+					local Player = Instance.new("Frame")
+					local UICorner_3 = Instance.new("UICorner")
+					local UIPadding_3 = Instance.new("UIPadding")
+					local UIListLayout_2 = Instance.new("UIListLayout")
+					local User = Instance.new("ImageLabel")
+					local PlayerName = Instance.new("TextLabel")
+					local UIPadding_4 = Instance.new("UIPadding")
+					local Distance = Instance.new("TextLabel")
+					local UIPadding_5 = Instance.new("UIPadding")
+					local Life = Instance.new("TextLabel")
+					local UIPadding_6 = Instance.new("UIPadding")
+
+					Player.Name = player.Name
+					Player.Parent = con
+					Player.AnchorPoint = Vector2.new(0, 0)
+					Player.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
+					Player.BorderColor3 = Color3.fromRGB(0, 0, 0)
+					Player.BorderSizePixel = 0
+					Player.Position = UDim2.new(0, 5, 0, 5)
+					Player.ZIndex = 0
+					Player.Size = UDim2.new(1, -10, 0, 27)
+
+					UICorner_3.Parent = Player
+					UICorner_3.CornerRadius = UDim.new(0, 4)
+
+					UIPadding_3.Parent = Player
+					UIPadding_3.PaddingLeft = UDim.new(0, 5)
+
+					UIListLayout_2.Parent = Player
+					UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+					UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+					UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+					UIListLayout_2.Padding = UDim.new(0, 3)
+
+					User.Name = "User"
+					User.ZIndex = 0
+					User.Parent = Player
+					User.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+					User.BackgroundTransparency = 1.000
+					User.Size = UDim2.new(0, 20, 0, 20)
+					User.Image = "rbxassetid://7743875962"
+
+					PlayerName.Name = "PlayerName"
+					PlayerName.Parent = Player
+					PlayerName.AnchorPoint = Vector2.new(0, 0.5)
+					PlayerName.BackgroundTransparency = 1.000
+					PlayerName.Position = UDim2.new(0.0938775539, 0, 0.5, 0)
+					PlayerName.Size = UDim2.new(0.51224488, 0, 0, 22)
+					PlayerName.Font = Enum.Font.Unknown
+					PlayerName.Text = player.Name
+					PlayerName.ZIndex = 0
+					PlayerName.TextColor3 = Color3.fromRGB(200, 200, 200)
+					PlayerName.TextSize = 8.000
+					PlayerName.TextXAlignment = Enum.TextXAlignment.Left
+
+					UIPadding_4.Parent = PlayerName
+					UIPadding_4.PaddingLeft = UDim.new(0, 3)
+
+					Distance.Name = "Distance"
+					Distance.Parent = Player
+					Distance.AnchorPoint = Vector2.new(0, 0.5)
+					Distance.BackgroundTransparency = 1.000
+					Distance.Position = UDim2.new(0.916326523, 0, -5.09259272, 0)
+					Distance.Size = UDim2.new(0.206122443, 0, 0, 22)
+					Distance.Font = Enum.Font.Unknown
+					Distance.Text = "0 : D"
+					Distance.ZIndex = 0
+					Distance.TextColor3 = Color3.fromRGB(200, 200, 200)
+					Distance.TextSize = 8.000
+
+					UIPadding_5.Parent = Distance
+					UIPadding_5.PaddingLeft = UDim.new(0, 3)
+
+					Life.Name = "Life"
+					Life.Parent = Player
+					Life.AnchorPoint = Vector2.new(0, 0.5)
+					Life.BackgroundTransparency = 1.000
+					Life.Position = UDim2.new(0.532653034, 0, 0.5, 0)
+					Life.Size = UDim2.new(0.206122443, 0, 0, 22)
+					Life.Font = Enum.Font.Unknown
+					Life.Text = "0 : V"
+					Life.ZIndex = 0
+					Life.TextColor3 = Color3.fromRGB(200, 200, 200)
+					Life.TextSize = 8.000
+
+					UIPadding_6.Parent = Life
+					UIPadding_6.PaddingLeft = UDim.new(0, 3)
+					
+					-- Detectar clique com InputBegan
+					PlayerName.InputBegan:Connect(function(input, gpe)
+						if gpe then return end
+						if input.UserInputType == Enum.UserInputType.MouseButton1 then
+							Options.Callback(player.Name)
+							-- Aqui você pode adicionar mais ações que devem ser executadas ao clicar
+						end
+					end)
+
+					Player.Parent = con  -- Adiciona o frame do jogador à lista
+				end
+			end
+
+			-- Atualização constante
+			game:GetService("RunService").Heartbeat:Connect(function()
+				con:ClearAllChildren()  -- Limpa a lista existente
+				UpdatePlayerList()      -- Atualiza a lista com os jogadores atuais
+			end)
+
+			ContentPlayerList:GetPropertyChangedSignal("AbsoluteSize"):Connect(UpdateCanvasSize)
+			UpdateCanvasSize()
+			
+			-- Existing Title input handler
+			Title1.InputBegan:Connect(function(input, gameProcessed)
+				if gameProcessed then return end
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					on = not on
+					ContentPlayerList.Visible = true
+					ContentPlayerList:TweenPosition(UDim2.new(0.5, -340, 0.4, 10), Back, Out, 0.5, true)
+					if on == false then
+						ContentPlayerList:TweenPosition(UDim2.new(0.5, 0, 0.4, 10), Out, Back, 0.5, true)
+						task.wait(0.3)
+						ContentPlayerList.Visible = on
+					end
+				end
+			end)
+
+			
+			return Pl
+		end
+		
+		return Tab
+	end
+	
+	return GUI
+end
+
+local Main = Library:CreateWindow({
+	Title = "AkaidoHub",
+	Transparency = true,
+	Acrylic = true,
+	CloseAnimation = true,
+	KeyCode = "Q"
+})
+
+local Tab = Main:AddTab({})
+
+Tab:AddSection({})
+
+Tab:AddLabel({})
+
+Tab:AddButton({})
+
+Tab:AddToggle({})
+
+Tab:AddTogglePlay({})
+
+Tab:AddDropdown({})
+
+Tab:AddSlide({})
+
+Tab:AddEditText({})
+
+Tab:AddKeyBind({})
+
+Tab:AddHumanoid({})
+
+Tab:AddPlayerList({})
+
+Tab:AddColorPicker({
+	
+})
+
+Tab:AddButton({
+	Callback = function()
+		Tab:AddDialog({
+			Buttons = {
+				Comfirme = {
+					Title = "Test",
+					Callback = function()
+						print("Comfirme")
+					end,
+				},
+				Cancel = {
+					le = "Cancel",
+					Callback = function()
+						print("Cancel")
+					end
+				}
+			}
+		})
+	end
+})
+
+Tab:AddButton({
+	Callback = function()
+		Tab:AddNotify({})
+	end
+})
+return Library
